@@ -1,0 +1,20 @@
+composer:
+  last: Harrer
+  first: Gottlob
+title: Missa in D major
+id: HarWV 32
+genre: mass
+scoring: S, A, T, B (solo), S, A, T, B (coro),\\2 fl, 2 ob, 2 clno (D), timp (D–A), 2 vl, vla, b, org
+license: cc-by-sa-4.0
+sources:
+  A1:
+    siglum: D-Dl
+    shelfmark: Mus.2740-D-2
+    date: 1735-12
+    rism: 212006891
+    url: https://digital.slub-dresden.de/id426603583
+    license: public domain
+    principal: true
+imslp: Mass_in_D_major_(Harrer,_Gottlob)
+parts:
+  ottoni: Clarino I, II in D\\Timpani in D–A
