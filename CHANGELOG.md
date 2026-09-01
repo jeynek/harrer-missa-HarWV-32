@@ -1,14 +1,19 @@
 # Changelog
 
-## 2.0.0 - 2021-12-15
-
-### Changed
-
-- uses EES Tools and new editorial guidelines
-
-
-## 1.0 - 2019-11-08
+## 1.1.0 - 2026-09-01
 
 ### Added
 
-- initial release
+- tenor part score (`scores/t.ly`)
+
+## 1.0.2 - 2026-08-25
+
+### Changed
+
+- update metadata
+
+## 1.0.0 - 2026-08-25
+
+### Added
+
+- initial release with EES Tools

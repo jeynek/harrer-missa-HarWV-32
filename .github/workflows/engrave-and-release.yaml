@@ -7,4 +7,24 @@ on:
 
 jobs:
   engrave_scores:
-    uses: edition-esser-skala/ees-tools/.github/workflows/engrave-and-release.yaml@main
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Fix git safe.directory in container
+        run: mkdir -p /home/runner/work/_temp/_github_home && printf "[safe]\n\tdirectory = /github/workspace" > /home/runner/work/_temp/_github_home/.gitconfig
+
+      - name: Engrave
+        uses: docker://ghcr.io/edition-esser-skala/ees-tools:v2026.01.0
+
+      - name: Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            final/*.pdf
+            final/midi_collection.zip
+          fail_on_unmatched_files: false
