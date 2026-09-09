@@ -4,13 +4,13 @@ KyrieTenoreNotes = {
   \relative c' {
     \clef "treble_8"
     \key d \major \time 4/4 \autoBeamOff \tempoKyrie
-    \mvTr d4\fE^\tuttiE d d r
-    r d8 d d4. d8
-    dis4.( h8) h4 r8 h
-    cis2 cis4 r
-    h h h r8 h %5
+    \mvTr d4->\fE^\tuttiE d d r
+    r d8-> d d4.-> d8
+    dis4.(-> h8) h4-> r8 h
+    cis2-> cis4 r
+    h-> h h r8 h %5
     a2 a4 r8 a
-    h2~ h8 a4 a8
+    h2\trill~ h8 a4 a8
     a2 a4 r
     R1
     \tempoKyrieB R\fermata \bar "||" %10 finis
