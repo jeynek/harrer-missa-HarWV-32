@@ -15,3 +15,10 @@ main.pdf
 *.ps
 *.ref
 *.toc
+harrer-missa-HarWV-32.code-workspace
+.gitignore
+adnotacje_dyr.pdf
+czyste.pdf
+extracted_crops
+extract_annotations.py
+manifest.json
