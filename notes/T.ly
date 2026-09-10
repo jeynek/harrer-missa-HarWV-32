@@ -1,4 +1,4 @@
-\version "2.22.0"
+\version "2.24.0"
 
 KyrieTenoreNotes = {
   \relative c' {
@@ -28,56 +28,59 @@ KyrieTenoreLyrics = \lyricmode {
   lei -- son. %8 finis
 }
 
-KyrieIITenoreNotes = {
-  \relative c' {
-    \clef "treble_8"
-    \key d \major \time 4/4 \autoBeamOff \tempoKyrieII
-      \set Score.currentBarNumber = #160
-    R1*7 %166
-    \mvTr a8.\fE^\tuttiE a16 a8 a d4 r8 d
-    cis4 fis h, e8[ d]
-    cis[ cis16 d] cis8[ h] a[ cis] e4~
-    e8[ d16 cis] d4~ d8[ cis16 h] cis4 %170
-    d8[ a] d2 cis4
-    h2 a4 r
-    R1*3 %175
-    r2 r4 e'
-    cis fis h, e8[ d]
-    cis[ cis16 d] cis8[ h] a[ cis] fis4~
-    fis8[ e16 d] e4~ e8[ d16 cis] d4~
-    d8[ cis h a] gis[ e gis h] %180
-    cis4. h16[ a] h2~
-    h4 a8[ h] cis2
-    cis r
-    R1*9 %192
-    r4 fis d g
-    cis, fis8[ e] d[ d16 e] d8[ cis]
-    h[ d] g!4~ g8[ fis16 e] fis4~ %195
-    fis8[ e16 d] e4~ e8[ d cis h]
-    ais[ fis] ais[ h16 cis] d4. cis16[ h]
-    cis4. h16[ ais] h8[ g! h e]
-    cis fis4 e16[ d] e8[ d c? fis]~
-    fis[ g!16 fis] e8[ d] c4 h %200
-    h a8. a16 a8 a d4~
-    d8[ c] h4 a r
-    g8. g16 g8 g d'4 r8 c
-    h4 e a, d~
-    d8[ c16 h] c4~ c8[ h16 a] h4 %205
-    cis d8[ a] h4 e~
-    e d2 cis8 a
-    fis4 h a d~
-    d8[ cis] h e4 d8 cis[ d16 e]
-    fis4. e16[ d] e4 e %210
-    a,8. a16 a8 a d4 r8 d
-    cis4 fis h, e8[ d]
-    cis4. h16[ cis] d4 h
-    cis r r2
-    cis8. cis16 cis8 cis d4 d, %215
-    a'8. a16 a8 a d4 r8 e
-    cis4 d2 cis4
-    d \tempoKyrieIIFinis d d2
-    d1\fermata \bar "|." %219 FINIS
-  }
+% Definicja pomocnicza dla klamry poziomem z pionowymi zakończeniami
+bracketSpan = {
+  \once \override TextSpanner.style = #'line
+  \once \override TextSpanner.bound-details.left.text = \markup { \draw-line #'(0 . -0.7) }
+  \once \override TextSpanner.bound-details.right.text = \markup { \draw-line #'(0 . -0.7) }
+}
+
+KyrieIITenoreNotes = \relative c' {
+  \clef "treble_8"
+  \key d \major
+  \time 4/4
+
+  % --- Takty 167 - 172 ---
+  a8.->\f^\markup \italic "tutti" a16 a8 a d4-> r8\breathe d %167
+  cis4->-- fis->-- h,->-- e8[( d)] %168
+  cis8[-- cis16 d(] cis8)[ h] a[-- cis--] e4~ %169
+  e8\espressivo[ d16 cis] d4~ d8\espressivo[ cis16 h] cis4 %170
+  d8[-| a-] d2^\markup \italic "mv" \bracketSpan cis4\startTextSpan %171
+  h2 a4\stopTextSpan r %172
+
+  % --- Takty 173 - 175 ---
+  R1*3 %173-175
+
+  % --- Takty 176 - 183 ---
+  r2 r4 e' %176
+  cis4->-- fis->-- h,->-- e8[( d)] %177
+  cis8[-| cis16 d] cis8[( h)] a[-| cis-] fis4~ %178
+  fis8\espressivo[ e16 d] e4~ e8\espressivo[ d16 cis] d4~ %179
+  d8[ cis h a] gis[-| e-| gis-| h-|] %180
+  cis4.->-- h16[ a] \bracketSpan h2^\markup \italic "cresc." \startTextSpan ~ %181
+  h4 a8[ h] cis2 %182
+  cis4.\stopTextSpan cis8 r2 %183
+
+  % --- Takty 184 - 192 ---
+  R1*9 %184-192
+
+  % --- Takty 193 - 210 ---
+  c8 c->-- c->-- c c c c c %193
+  c8->-- c[( c)] c-| c c c[( c)] %194
+  c8-| c-| c c\espressivo c c c c %195
+  c8\espressivo c c c c c c c %196
+  c8[( c)] c-| c c c^\markup \italic "mv" c c %197
+  c8^\markup \italic "mv" c c c[( c-|)] c-| c-| c %198
+  c8-| c->-- c c c[( c c c^\markup \italic "mv")] %199
+  c8 c c c c \bracketSpan c\startTextSpan c c %200
+  c8\stopTextSpan c-> c c-| c c c c %201
+  c8\espressivo c \bracketSpan c\startTextSpan c\stopTextSpan c c c c %202
+  c8-> c c-| c c->-- c c c %203
+  R1*3 %204-206
+  c8->-- c->-- c->-- c c c c c %207
+  c8\espressivo c c c c\espressivo c c \bracketSpan c\startTextSpan %208
+  c8\stopTextSpan c[( c)] c c c c c %209
+  c8^\markup \italic "mv" \bracketSpan c\startTextSpan c\stopTextSpan \breathe c c c c c %210
 }
 
 KyrieIITenoreLyrics = \lyricmode {
@@ -95,7 +98,7 @@ KyrieIITenoreLyrics = \lyricmode {
   _ %180
   _ _ _
   _ _
-  son.
+  so -- n. %183
 
   E -- lei -- _ %193
   _ _ _ _
@@ -121,7 +124,7 @@ KyrieIITenoreLyrics = \lyricmode {
   son.
   Ky -- ri -- e e -- lei -- son. %215
   Ky -- ri -- e e -- lei -- _
-  _ _ _
+  _ _ _ _
   son, e -- lei --
   son. %219 FINIS
 }
